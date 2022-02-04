@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block title %}Catalog{% endblock %}
+{% block content %}
+{% if page_list %}
+<div class="content">
+    <div class="col-4">
+        {% for page in page_list %}
+        <a href="http://localhost:8000/list/{{ page.id }}/">
+            <div class="block x1" style="background-image: url('{{ page.image }}');">
+                <div class="text-block">
+                    {{ page.title }}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<p>There are no articles in the library.</p>
+{% endif %}
+
+{% endblock %}
+

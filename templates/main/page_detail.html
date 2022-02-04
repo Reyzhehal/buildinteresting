@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block meta %}
+<meta name="description" content="{{ page.description }}">
+<meta name="Keywords" content="{{ page.keywords }}">
+{% endblock %}
+{% block content %}
+<div class="col-8 d-flex">
+    {% for image in images %}
+    <img class="image" src="{{ image }}" alt="error">
+    {% endfor %}
+</div>
+        <div class="text-content">{{ page.content|safe }}</div>
+{% endblock %}

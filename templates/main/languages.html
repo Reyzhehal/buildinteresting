@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block title %}Languages{% endblock %}
+{% block content %}
+{% if languages %}
+{% for lang_code, language in languages.items %}
+<h1><a href="http://localhost:8000/{{ lang_code }}/list/" class="button">{{ language }}</a></h1>
+{% endfor %}
+{% else %}
+<p>There are no languages in the library.</p>
+{% endif %}
+
+{% endblock %}

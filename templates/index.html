@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block meta %}{% endblock %}
+  <title>{% block title %}{% endblock %}</title>
+  {% load compress %}
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  {% compress css %}
+  <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" media="screen">
+  <link type="text/x-scss" href="{% static 'scss/main.scss' %}" rel="stylesheet" media="screen">
+  {% endcompress%}
+</head>
+
+<STYLE>
+  A {
+    text-decoration: none;
+  }
+</STYLE>
+
+<body>
+  <nav class="nav">
+    <input class="nav__trigger-input" type="checkbox" id="trigger" aria-label="open the navigation" />
+    <label class="nav__trigger-finger" for="trigger">
+      <span></span>
+    </label>
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="#hoi" class="nav__link">
+          <span class="nav__text">
+            Сюда
+          </span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#hoi" class="nav__link">
+          <span class="nav__text">
+            Тоже
+          </span>
+        </a>
+        <input class="nav__submenu-trigger-input" type="checkbox" id="submenu-trigger" />
+        <label class="nav__submenu-trigger-finger" for="submenu-trigger"></label>
+        <ul class="nav__list-child">
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                Чето
+              </span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                Добавлю
+              </span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item">
+        <a href="#hoi" class="nav__link">
+          <span class="nav__text">
+            Чето
+          </span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#hoi" class="nav__link">
+          <span class="nav__text">
+            Добавлю
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="background">
+    {% block content %}{% endblock %}
+  </div>
+  {% block pagination %}
+  {% if is_paginated %}
+  <div class="pagination">
+    <ul class="pagination modal-5">
+        {% if page_obj.number > 1 %}
+        <li><a href="{{ request.path }}?page={{ page_obj.number|add:'-1' }}" class="prev fa fa-arrow-left"> </a></li>
+        {% endif %}
+        {% if page_obj.number > 4 %}
+        <li> <a href="{{ request.path }}?page={{ page_obj.number|add:'-4' }}">{{ page_obj.number|add:"-4" }}</a></li>
+        {% endif %}
+        {% if page_obj.number > 3 %}
+        <li> <a href="{{ request.path }}?page={{ page_obj.number|add:'-3' }}">{{ page_obj.number|add:"-3" }}</a></li>
+        {% endif %}
+        {% if page_obj.number > 2 %}
+        <li> <a href="{{ request.path }}?page={{ page_obj.number|add:'-2' }}">{{ page_obj.number|add:"-2" }}</a></li>
+        {% endif %}
+        {% if page_obj.number > 1 %}
+        <li> <a href="{{ request.path }}?page={{ page_obj.number|add:'-1' }}">{{ page_obj.number|add:"-1" }}</a></li>
+        {% endif %}
+        <li><a href="" class="active">{{ page_obj.number }}</a></li>
+        {% if page_obj.number < 26 %}
+        <li> <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">{{ page_obj.number|add:"+1" }}</a></li>
+        {% endif %}
+        {% if page_obj.number < 25 %}
+        <li> <a href="{{ request.path }}?page={{ page_obj.number|add:'+2' }}">{{ page_obj.number|add:"+2" }}</a></li>
+        {% endif %}
+        {% if page_obj.number < 24 %}
+        <li> <a href="{{ request.path }}?page={{ page_obj.number|add:'+3' }}">{{ page_obj.number|add:"+3" }}</a></li>
+        {% endif %}
+        {% if page_obj.number < 23 %}
+        <li> <a href="{{ request.path }}?page={{ page_obj.number|add:'+4' }}">{{ page_obj.number|add:"+4" }}</a></li>
+        {% endif %}
+        {% if page_obj.number < 26 %}
+        <li><a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="next fa fa-arrow-right"></a></li>
+        {% endif %}
+    </ul>
+  </div>
+  {% endif %}
+  {% endblock %}
+  <script src='https://codepen.io/fbrz/pen/9a3e4ee2ef6dfd479ad33a2c85146fc1.js'></script>
+  <script src="{% static 'js/jquery-1.8.3.min.js'%}"></script>
+</body>
+
+</html>
