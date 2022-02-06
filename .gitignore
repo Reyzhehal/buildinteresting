@@ -1,4 +1,5 @@
-env
+venv
+sources
 .vscode
 sources
 __pycache__

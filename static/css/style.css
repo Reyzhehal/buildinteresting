@@ -5,16 +5,10 @@
 
 }
 
-body {
-  background-color: #555;
-  text-align: center;
-  font-family: arial;
-}
-
 
 .button {
   transition-duration: 0.4s;
-  background-color: #1f233aa2; /* Green */
+  background-color: #1f233aa2;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -28,7 +22,7 @@ body {
 
 
 .button:hover {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   color: white;
 }
 
@@ -127,8 +121,6 @@ body {
   display: none;
 }
 
-
-
 .background:before{
   content: "";
   position: fixed;
@@ -159,23 +151,22 @@ body {
   transform: translate(-50%, -50%);
   display: block;
   color: white;
+  font-family: 'Roboto Condensed', sans-serif;
 -webkit-box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
 -moz-box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
 box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
 }
 
-
-body{
+body {
   font-family: 'Roboto Condensed', sans-serif;
-  text-align:center;
-  vertical-align:middle;  
+  text-align: center;
+  vertical-align: middle;  
 }
 
 .text-content {
   color: rgb(240, 240, 240);
-  font-family: HelveticaNeue, Helvetica, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   width: 1000px;
-  margin-top: 50px;
   margin: auto;
   background: rgba(26, 26, 26, 0.342);
   border-radius: 30px;
@@ -183,8 +174,15 @@ body{
 -moz-box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.1);
 box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
 }
+.h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
 
-.x1{
+h3 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.x1 {
   width:100%;
   height:20%;
   background-color:#9CB1FF;
@@ -194,7 +192,7 @@ box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
   line-height:150px;
 }
 
-.text-block {
+.image-text {
   color: white;
   z-index: 88;
   text-shadow: 1px 1px 2px black, 0 0 1em black;
@@ -207,9 +205,9 @@ box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
 
 
 .block{
-  -webkit-animation:scaledown 1s linear;
-  -moz-animation:scaledown 1s linear;
-  animation:scaledown 1s linear;
+  -webkit-animation: scaledown 1s linear;
+  -moz-animation: scaledown 1s linear;
+  animation: scaledown 1s linear;
   transform-origin:50% 50%;
   animation-fill-mode: forwards;
 }

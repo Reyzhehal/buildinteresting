@@ -1,11 +1,5 @@
 $bezier: cubic-bezier(0.75, 0, 0.25, 1);
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: HelveticaNeue, Helvetica, sans-serif;
-}
-
 .nav {
   color: white;
   &__trigger-finger {
@@ -159,17 +153,17 @@ $bezier: cubic-bezier(0.75, 0, 0.25, 1);
 
 main {
   padding: 6rem 4rem;
-  h1 {
-    font-size: 3rem;
-    font-weight: normal;
-    span {
-      color: hotpink;
-    }
-  }  
-  p {
-    line-height: 1.5;
-    margin-top: 1.5rem;
-  }
+  // h1 {
+  //   font-size: 3rem;
+  //   font-weight: normal;
+  //   span {
+  //     color: hotpink;
+  //   }
+  // }  
+  // p {
+  //   line-height: 1.5;
+  //   margin-top: 1.5rem;
+  // }
 }
 
 .image {
